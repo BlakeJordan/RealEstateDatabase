@@ -1,0 +1,53 @@
+html{
+  background-color: slategrey;
+}
+h1 {
+  font-size: 100px;
+  text-align: center;
+  color:orange;
+}
+
+h2 {
+  font-size: 75px;
+  text-align: center;
+  color: greenyellow;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: red;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  text-decoration: none;
+}
+
+button{
+  text-align: center;
+  display: block;
+  background: linear-gradient(35deg, darkorange 40%, yellow 90%);
+  color: rgb(50, 50, 50);
+  border-radius: 10px;
+  padding: 20px;
+  font-size: 40px;
+  margin: auto;
+}
+
+input{
+  text-align: center;
+  display: block;
+  margin: auto;
+}
+
+textarea{
+  text-align: center;
+  display: block;
+  margin: auto;
+}

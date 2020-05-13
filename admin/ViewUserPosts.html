@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href= "style.css" rel= "stylesheet">
+  </head>
+  <body>
+    <h1>Pick a user:</h1>
+    <?php
+    $mysqli = new mysqli("mysql.eecs.ku.edu", "kevdinh33", "yoo7Feeg", "kevdinh33");
+    if ($mysqli->connect_error) {
+        printf("Connect failed: %\n", $mysqli->connect_error);
+        exit();
+    }
+    $query = $mysqli->query("SELECT userid FROM Users");
+    while($array[] = $query->fetch_object());
+    array_pop($array);
+    ?>
+    <form action= 'ViewUserPosts.php' method= 'post'>
+    <select name="choice" required="required">
+      <?php foreach ( $array as $option ) : ?>
+            <option value="<?php echo $option->userid; ?>"><?php echo $option->userid; ?></option>
+      <?php endforeach; ?>
+    </select>
+    <br>
+    <input type='submit' value='Submit'>
+    </form>
+  </body>
+</html>
