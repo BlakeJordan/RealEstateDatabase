@@ -1,7 +1,7 @@
 <?php
 echo "<link rel='stylesheet' href='style.css'>";
 //intializing variables
-$mysqli = new mysqli("mysql.eecs.ku.edu", "kevdinh33", "yoo7Feeg", "kevdinh33");
+$mysqli = new mysqli("mysql.eecs.ku.edu", "kevdinh33", "Meej3ien", "kevdinh33");
 
 /* check connection */
 if ($mysqli->connect_error) {
