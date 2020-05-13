@@ -12,7 +12,7 @@ if ($mysqli->connect_error){
 }
 //SQL code
 if($user != "NULL"){
-    $query = "INSERT INTO Houses (ULI, BankLoan, InterestRate, MortgageLength)
+    $query = "INSERT INTO Loans (ULI, BankLoan, InterestRate, MortgageLength)
     VALUES ('$loanID', '$bank', '$intRate', '$mortLength')";
   }
   

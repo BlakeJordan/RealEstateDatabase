@@ -1,6 +1,6 @@
 <?php
 echo "<link rel='stylesheet' href='style.css'>";
-$address =$_POST['sellerAddress'];
+$sellerAddress =$_POST['sellerAddress'];
 $sellerEmail = $_POST['sellerEmail'];
 $sellerLastName = $_POST['sellerLastName'];
 $sellerFirstName = $_POST['sellerFirstName'];
