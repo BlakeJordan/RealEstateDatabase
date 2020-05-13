@@ -1,7 +1,7 @@
 <?php
 echo "<link rel='stylesheet' href='style.css'>";
 $postid = $_POST['choice'];
-$mysqli = new mysqli("mysql.eecs.ku.edu", "kevdinh33", "yoo7Feeg", "kevdinh33");
+$mysqli = new mysqli("mysql.eecs.ku.edu", "kevdinh33", "Meej3ien", "kevdinh33");
 if ($mysqli->connect_error) {
     printf("Connect failed: %\n", $mysqli->connect_error);
     exit();
