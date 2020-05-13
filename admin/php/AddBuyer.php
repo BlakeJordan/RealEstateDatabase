@@ -28,8 +28,8 @@ if($user != "NULL"){
   }
   echo "<br><br>
   <div class='menu'>
-    <a href='index.html'>
-    <button type='button'>Return Home</button>
+    <a href='../html/AdminHome.html'>
+    <button type='button'>Return to Admin Home</button>
     </a>
   </div>";
   
