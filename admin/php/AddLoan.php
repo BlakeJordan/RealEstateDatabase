@@ -1,6 +1,6 @@
 <?php
 echo "<link rel='stylesheet' href='style.css'>";
-$loadID = $_POST['loanID'];
+$loanID = $_POST['loanID'];
 $bank = $_POST['bank'];
 $intRate = $_POST['intRate'];
 $mortLength = $_POST['mortLength'];
