@@ -2,7 +2,7 @@
 echo "<link rel='stylesheet' href='style.css'>";
 //Initializing variables
 $user = $_POST['username'];
-$mysqli = new mysqli("mysql.eecs.ku.edu", "kevdinh33", "yoo7Feeg", "kevdinh33");
+$mysqli = new mysqli("mysql.eecs.ku.edu", "kevdinh33", "Meej3ien", "kevdinh33");
 //Checking connections
 if ($mysqli->connect_error){
   printf("Connection Failed: %\n", $mysqli->connect_error);
