@@ -115,7 +115,7 @@
         while($row = mysqli_fetch_array($result))
         {
         echo "<tr>";
-        echo "<td>" . $row['Licence'] . "</td>";
+        echo "<td>" . $row['License'] . "</td>";
         echo "<td>" . $row['Name'] . "</td>";
         echo "<td>" . $row['Contracts'] . "</td>";
         echo "<td>" . $row['HouseList'] . "</td>";
