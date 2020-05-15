@@ -147,7 +147,7 @@
         echo "</table>";
     }
     else{
-        echo "<h1>Failed</h1>";
+        echo "<h1>" . $Table . "</h1>";
     }
    mysqli_close($mysqli);
 ?>
