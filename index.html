@@ -1,22 +1,42 @@
-<?php 
-  include("login.php");
-  include("session.php")
-?>
-
 <!DOCTYPE html>
 <html>
   <head>
-    <link href= "login.css" rel= "stylesheet">
+    <link href= "style.css" rel= "stylesheet">
   </head>
   <body>
     <h1>EECS 647 Database Scenario</h1>
-    <h2>Login</h2>
-      <form action="login.php" method="post">
-        <input type="email" required placeholder="Email" name="username">
-        <input type = "password" required name="password" id="password" name="password" placeholder="Password"><br>
-        <br>
-        <button type="submit" value="Submit">Submit</button>
-      </form>
-      <div style = "font-size:11px; color:#cc0000; margin-top:10px"><?php echo $error; ?></div>
-    </body>
+    <h2>Real Estate Network</h2>
+    <div class="menu">
+      <input placeholder="Search Houses"></input>
+    </div>
+    <div>
+      <button type="button">Go</button>
+    </div>
+    <br><br>
+    <div class="menu">
+      <input placeholder="Search Buyers"></input>
+      <button type="button">Go</button>
+    </div>
+    <br><br>
+    <div class="menu">
+      <input placeholder="Search Sellers"></input>
+      <button type="button">Go</button>
+    </div>
+    <br><br>
+    <div class="menu">
+      <input placeholder="Search Real Estate Agencies"></input>
+      <button type="button">Go</button>
+    </div>
+    <br><br>
+    <div class="menu">
+      <input placeholder="Search Home Loans"></input>
+      <button type="button">Go</button>
+    </div>
+    <br><br>
+    <div class="menu">
+      <a href="admin/html/AdminHome.html">
+        <button type="button">Admin Commands (Edit Database)</button>
+      </a>
+    </div>
+  </body>
 </html>
