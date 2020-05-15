@@ -105,7 +105,7 @@
 
         echo "<table border='1'>
         <tr>
-        <th>Liscence</th>
+        <th>Licence</th>
         <th>Name</th>
         <th>Contracts</th>
         <th>House List</th>
@@ -115,7 +115,7 @@
         while($row = mysqli_fetch_array($result))
         {
         echo "<tr>";
-        echo "<td>" . $row['Liscence'] . "</td>";
+        echo "<td>" . $row['Licence'] . "</td>";
         echo "<td>" . $row['Name'] . "</td>";
         echo "<td>" . $row['Contracts'] . "</td>";
         echo "<td>" . $row['HouseList'] . "</td>";
