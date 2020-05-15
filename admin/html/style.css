@@ -52,10 +52,10 @@ input{
   margin: auto;
 }
 
-input:invalid:required {
-  background-image: linear-gradient(to right, pink, lightgreen);
+input:invalid {
+  border: 2px solid red;
 }
 
 input:valid {
-  border: 2px solid black;
+  border: 2px solid green;
 }

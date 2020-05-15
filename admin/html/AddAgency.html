@@ -7,15 +7,15 @@
         <h1>Add Estate Agency</h1>
         <div>
             <form action="../php/AddAgency.php" method="post">
-                <input type="text" required="required" placeholder="License Number" name="agentNumber" pattern="[0-9]{1-5}">
+                <input type="number" required placeholder="License Number" name="agentNumber" pattern="[0-9]{1-5}">
                 <br>
-                <input type="text" required="required" placeholder="Agent Name" name="agentName" pattern="[A-Za-z0-9]{1-20}">
+                <input type="text" required placeholder="Agent Name" name="agentName" pattern="[A-Za-z]{1-20}">
                 <br>
-                <input type="text" required="required" placeholder="Contract Type" name="agentContract" pattern="[A-Za-z0-9]{1-20}">
+                <input type="text" required placeholder="Contract Type" name="agentContract" pattern="[A-Za-z]{1-20}">
                 <br>
-                <input type="text" placeholder="House Listing" name="houseList" pattern="[A-Za-z0-9]{1-20}">
+                <input type="text" required placeholder="House Listing" name="houseList" pattern="[A-Za-z0-9]{1-20}">
                 <br><br>
-                <input type="submit"  value="Submit">
+                <input type="submit" value="Submit">
                 <br><br>
             </form>
             <a href="AdminHome.html">
