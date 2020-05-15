@@ -1,7 +1,9 @@
 <?php
     $mysqli = new mysqli("mysql.eecs.ku.edu", "kevdinh33", "Meej3ien", "kevdinh33");
 
-    $search1 = isset($_POST['house-price']) ? $_POST['house-price'] : false;
+    $search1 = isset($_POST['multi-owner']) ? $_POST['multi-owner'] : false;
+    $search2 = isset($_POST['house-smaller']) ? $_POST['house-smaller'] : false;
+    //$search3 = isset($_POST['house-price']) ? $_POST['house-price'] : false;
     $option = isset($_POST['tableOptions']) ? $_POST['tableOptions'] : false;
 
     if ($mysqli->connect_errno)
@@ -29,7 +31,28 @@
         echo "<td>" . $row['LastName'] . "</td>";
         echo "<td>" . $row['FirstName'] . "</td>";
         echo "</tr>";
-        }
+        }   
+        echo "</table>";
+    }
+    elseif($search2){
+        $result = mysqli_query($mysqli,"SELECT DISTINCT Houses.Address, Houses.SquareFootage
+                                        FROM Houses
+                                        INNER JOIN Sellers ON (Sellers.SellerID <> Houses.OwnerID)
+                                        WHERE Houses.SquareFootage < X;");
+
+        echo "<table border='1'>
+        <tr>
+        <th>Address</th>
+        <th>SquareFootage</th>
+        </tr>";
+
+        while($row = mysqli_fetch_array($result))
+        {
+        echo "<tr>";
+        echo "<td>" . $row['Address'] . "</td>";
+        echo "<td>" . $row['SquareFootage'] . "</td>";
+        echo "</tr>";
+        }   
         echo "</table>";
     }
 
