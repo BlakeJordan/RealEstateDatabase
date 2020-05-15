@@ -12,17 +12,16 @@
       <br>
       <button type="submit" value="Submit">Submit</button>
     </form>
-    <label for="tables">Choose a table:</label>
-    <select id="tables" name="tables">
-      <option value="buyers">Buyers</option>
-      <option value="sellers">Sellers</option>
-      <option value="houses">Houses</option>
-      <option value="estate-agency">Estate Agency</option>
-      <option value="loans">Loans</option>
-      <option value="users">Users</option>
-    </select>
     <form action="search.php" method="post">
-      <button type="submit" value="Submit">Submit</button>
+      <select name="tableOptions">
+        <option value="1">Buyers</option>
+        <option value="2">Sellers</option>
+        <option value="3">Houses</option>
+        <option value="4">Estate Agency</option>
+        <option value="5">Loans</option>
+        <option value="6">Users</option>
+      </select>
+      <button type="submit" value="Submit"></button>
     </form>
     <div style = "font-size:11px; color:#cc0000; margin-top:10px"><?php echo $error; ?></div>
   </body>

@@ -1,7 +1,13 @@
 <?php
    $mysqli = new mysqli("mysql.eecs.ku.edu", "kevdinh33", "Meej3ien", "kevdinh33");
 
-   $Table = $_POST['tables'];
+   $option = isset($_POST['tableOptions']) ? $_POST['tableOptions'] : false;
+   if ($option) {
+      echo htmlentities($_POST['tableOptions'], ENT_QUOTES, "UTF-8");
+   } else {
+     echo "table option is required";
+     exit; 
+   }
 
    if ($mysqli->connect_errno)
    {
@@ -9,7 +15,7 @@
      exit();
    }
 
-   if($Table == 1){
+   if($option[0] == '1'){
         $result = mysqli_query($mysqli,"SELECT * FROM Buyers");
 
         echo "<table border='1'>
@@ -34,7 +40,7 @@
         echo "</table>";
     }
 
-    elseif($Table == 'sellers'){
+    elseif($option == '2'){
         $result = mysqli_query($mysqli,"SELECT * FROM Sellers");
 
         echo "<table border='1'>
@@ -60,7 +66,7 @@
         }
         echo "</table>";
     }
-    elseif($Table == 'users'){
+    elseif($option == 'users'){
         $result = mysqli_query($mysqli,"SELECT * FROM Users");
 
         echo "<table border='1'>
@@ -78,7 +84,7 @@
         }
         echo "</table>";
     }
-    elseif($Table == 'houses'){
+    elseif($option == 'houses'){
         $result = mysqli_query($mysqli,"SELECT * FROM Houses");
 
         echo "<table border='1'>
@@ -100,7 +106,7 @@
         }
         echo "</table>";
     }
-    elseif($Table == 'estate-agency'){
+    elseif($option == 'estate-agency'){
         $result = mysqli_query($mysqli,"SELECT * FROM EstateAgency");
 
         echo "<table border='1'>
@@ -124,7 +130,7 @@
         }
         echo "</table>";
     }
-    elseif($Table == 'loans'){
+    elseif($option == 'loans'){
         $result = mysqli_query($mysqli,"SELECT * FROM Loans");
 
         echo "<table border='1'>
@@ -147,7 +153,7 @@
         echo "</table>";
     }
     else{
-        echo "<h1>" . $Table . "</h1>";
+        echo "<h1>" . $option . "</h1>";
     }
    mysqli_close($mysqli);
 ?>
