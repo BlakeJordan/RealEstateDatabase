@@ -43,7 +43,7 @@ button {
 }
 
 input{
-  float: Center;
+  float: left;
   text-align: left;
   display: block;
   font-size: 20px;

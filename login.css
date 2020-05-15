@@ -51,12 +51,6 @@ html{
     width: 300px;
   }
   
-  textarea{
-    text-align: center;
-    display: block;
-    margin: auto;
-  }
-  
   input:valid {
     border: 2px solid green;
   }
