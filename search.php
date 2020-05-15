@@ -9,7 +9,7 @@
      exit();
    }
 
-   if($option[0] == '1'){
+   if($option[0] == 'buyers'){
         $result = mysqli_query($mysqli,"SELECT * FROM Buyers");
 
         echo "<table border='1'>
@@ -34,7 +34,7 @@
         echo "</table>";
     }
 
-    elseif($option[0] == '2'){
+    elseif($option[0] == 'sellers'){
         $result = mysqli_query($mysqli,"SELECT * FROM Sellers");
 
         echo "<table border='1'>
@@ -60,7 +60,7 @@
         }
         echo "</table>";
     }
-    elseif($option[0] == '3'){
+    elseif($option[0] == 'users'){
         $result = mysqli_query($mysqli,"SELECT * FROM Users");
 
         echo "<table border='1'>
@@ -78,7 +78,7 @@
         }
         echo "</table>";
     }
-    elseif($option[0] == '4'){
+    elseif($option[0] == 'houses'){
         $result = mysqli_query($mysqli,"SELECT * FROM Houses");
 
         echo "<table border='1'>
@@ -100,7 +100,7 @@
         }
         echo "</table>";
     }
-    elseif($option[0] == '5'){
+    elseif($option[0] == 'estate-agency'){
         $result = mysqli_query($mysqli,"SELECT * FROM EstateAgency");
 
         echo "<table border='1'>
@@ -124,7 +124,7 @@
         }
         echo "</table>";
     }
-    elseif($option[0] == '6'){
+    elseif($option[0] == 'loans'){
         $result = mysqli_query($mysqli,"SELECT * FROM Loans");
 
         echo "<table border='1'>
