@@ -1,5 +1,5 @@
 <?php
-   $mysqli = new mysqli("mysql.eecs.ku.edu", "kevdinh33", "Meej3ien", "kevdinh33");
+   $db = new mysqli("mysql.eecs.ku.edu", "kevdinh33", "Meej3ien", "kevdinh33");
    session_start();
    
    if($_SERVER["REQUEST_METHOD"] == "POST") {
