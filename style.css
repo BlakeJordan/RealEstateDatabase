@@ -43,7 +43,7 @@ button {
 }
 
 input{
-  float: left;
+  float: Center;
   text-align: left;
   display: block;
   font-size: 20px;
@@ -57,8 +57,8 @@ textarea{
   margin: auto;
 }
 
-input:invalid:required {
-  background-image: linear-gradient(to right, pink, lightgreen);
+input:invalid {
+  background-color: solid red;
 }
 
 input:valid {
