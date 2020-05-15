@@ -1,6 +1,6 @@
 <?php
 echo "<link rel='stylesheet' href='style.css'>";
-$address = $_POST['address'];
+$address = $_POST['sellerAddress'];
 $SqFt = $_POST['sqFt'];
 $roomNum = $_POST['roomNum'];
 $bathNum = $_POST['bathNum'];
