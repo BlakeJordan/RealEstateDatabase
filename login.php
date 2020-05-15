@@ -1,5 +1,5 @@
 <?php
-   $db = new mysqli("mysql.eecs.ku.edu", "kevdinh33", "Meej3ien", "kevdinh33");
+   include("config.php");
    session_start();
    
    if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -14,11 +14,10 @@
       $active = $row['active'];
       
       $count = mysqli_num_rows($result);
-      
-      // If result matched $myusername and $mypassword, table row must be 1 row
 		
       if($count == 1) {
          session_register("myusername");
+         $_SESSION['login_user'] = $myusername;
          header("location: home.html");
       }else {
          $error = "Your Email or Password is invalid";

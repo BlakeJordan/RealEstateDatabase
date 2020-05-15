@@ -1,5 +1,6 @@
 <?php 
   include("login.php");
+  include("session.php")
 ?>
 
 <!DOCTYPE html>
@@ -10,12 +11,12 @@
   <body>
     <h1>EECS 647 Database Scenario</h1>
     <h2>Login</h2>
-    <form action="login.php" method="post">
-      <input type="email" required placeholder="Email" name="username">
-      <input type = "password" required name="password" id="password" placeholder="Password"><br>
-      <br>
-      <button type="submit" value="Submit">Submit</button>
-    </form>
-    <div style = "font-size:11px; color:#cc0000; margin-top:10px"><?php echo $error; ?></div>
-  </body>
+      <form action="login.php" method="post">
+        <input type="email" required placeholder="Email" name="username">
+        <input type = "password" required name="password" id="password" placeholder="Password"><br>
+        <br>
+        <button type="submit" value="Submit">Submit</button>
+      </form>
+      <div style = "font-size:11px; color:#cc0000; margin-top:10px"><?php echo $error; ?></div>
+    </body>
 </html>
