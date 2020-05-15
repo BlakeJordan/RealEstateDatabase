@@ -21,7 +21,7 @@
          session_register("myusername");
          header("location: home.html");
       }else {
-         $error = "Your Login Name or Password is invalid";
+         $error = "Your Email or Password is invalid";
       }
    }
 ?>
