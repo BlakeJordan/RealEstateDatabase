@@ -9,7 +9,7 @@
      exit();
    }
 
-   if($Table == 'buyers'){
+   if($Table == 'Buyers'){
         $result = mysqli_query($mysqli,"SELECT * FROM Buyers");
 
         echo "<table border='1'>
