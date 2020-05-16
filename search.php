@@ -12,11 +12,11 @@
         printf("Connect failed: %s\n", $mysqli->connect_error);
         exit();
     }
-    
+
 
     if($search1){
         
-        $query =   'SELECT * FROM Houses WHERE Houses.Address = ?;';
+        $query =  'SELECT * FROM Houses WHERE Houses.Address = ?;';
 
         if($stmt = $mysqli->prepare($query)){
 
@@ -62,7 +62,7 @@
 
         if($stmt = $mysqli->prepare($query)){
 
-            $stmt->bind_param('s',$search1);
+            $stmt->bind_param('s',$search2);
 
             $stmt->execute();
 
@@ -104,7 +104,7 @@
 
         if($stmt = $mysqli->prepare($query)){
 
-            $stmt->bind_param('s',$search1);
+            $stmt->bind_param('s',$search3);
 
             $stmt->execute();
 
@@ -146,7 +146,7 @@
 
         if($stmt = $mysqli->prepare($query)){
 
-            $stmt->bind_param('s',$search1);
+            $stmt->bind_param('s',$search4);
 
             $stmt->execute();
 
@@ -186,7 +186,7 @@
 
         if($stmt = $mysqli->prepare($query)){
 
-            $stmt->bind_param('s',$search1);
+            $stmt->bind_param('s',$search5);
 
             $stmt->execute();
 
