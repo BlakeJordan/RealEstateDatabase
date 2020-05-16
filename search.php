@@ -1,4 +1,5 @@
 <?php
+    echo "<link rel='stylesheet' href='style.css'>";
     $mysqli = new mysqli("mysql.eecs.ku.edu", "kevdinh33", "Meej3ien", "kevdinh33");
 
     $search1 = isset($_POST['search-house']) ? $_POST['search-house'] : false;
@@ -6,6 +7,9 @@
     $search3 = isset($_POST['search-sellers']) ? $_POST['search-sellers'] : false;
     $search4 = isset($_POST['search-estate-agency']) ? $_POST['search-estate-agency'] : false;
     $search5 = isset($_POST['search-loans']) ? $_POST['search-loans'] : false;
+    $search6 = isset($_POST['whose-house']) ? $_POST['whose-house'] : false;
+    $search7 = isset($_POST['what-loan']) ? $_POST['what-loan'] : false;
+    $search8 = isset($_POST['multi-owner']) ? $_POST['multi-owner'] : false;
 
     if ($mysqli->connect_errno)
     {
@@ -180,7 +184,7 @@
             echo "</table>";
         }
     }
-    if($search5){
+    elseif($search5){
         
         $query =   'SELECT * FROM Loans WHERE Loans.BankLoan = ?;';
 
@@ -219,4 +223,104 @@
 
             echo "</table>";
         }
+    }
+    elseif($search6){
+        $query =   'SELECT DISTINCT Houses.Address, Sellers.LastName
+                    FROM Houses
+                    INNER JOIN Sellers ON (Sellers.SellerID = Houses.OwnerID)
+                    WHERE Sellers.LastName = ?;';
+
+        if($stmt = $mysqli->prepare($query)){
+
+            $stmt->bind_param('s',$search2);
+
+            $stmt->execute();
+
+            $result = $stmt->get_result();
+
+            $num_of_rows = $result->num_rows;
+
+            echo "<table border='1'>
+            <tr>
+            <th>Address</th>
+            <th>LastName</th>
+            </tr>";
+
+        while ($row = $result->fetch_assoc()) {
+            echo "<tr>";
+            echo "<td>" . $row['Address'] . "</td>";
+            echo "<td>" . $row['LastName'] . "</td>";
+            echo "</tr>";
+        }
+
+        /* free results */
+        $stmt->free_result();
+
+        /* close statement */
+        $stmt->close();
+
+        echo "</table>";
+        }
+    }
+    elseif($search7){
+        $query =   'SELECT DISTINCT Loans.ULI, Buyers.FirstName, Buyers.LastName
+                    FROM Buyers
+                    INNER JOIN Loans ON (Loans.ULI = Buyers.FK_ULI)
+                    WHERE Buyers.LastName = ?;';
+
+        if($stmt = $mysqli->prepare($query)){
+
+            $stmt->bind_param('s',$search3);
+
+            $stmt->execute();
+
+            $result = $stmt->get_result();
+
+            $num_of_rows = $result->num_rows;
+
+            echo "<table border='1'>
+            <tr>
+            <th>ULI</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            </tr>";
+
+            while ($row = $result->fetch_assoc()) {
+                echo "<tr>";
+                echo "<td>" . $row['ULI'] . "</td>";
+                echo "<td>" . $row['FirstName'] . "</td>";
+                echo "<td>" . $row['LastName'] . "</td>";
+                echo "</tr>";
+            }
+            
+            /* free results */
+            $stmt->free_result();
+            
+            /* close statement */
+            $stmt->close();
+
+            echo "</table>";
+        }
+    }
+    else{
+        $result = mysqli_query($mysqli,"SELECT DISTINCT Sellers.LastName, Sellers.FirstName
+                                        FROM Sellers
+                                        INNER JOIN Houses ON (Sellers.SellerID = Houses.OwnerID)
+                                        WHERE Sellers.SellerID IN ( SELECT OwnerID FROM Houses
+                                        GROUP BY OwnerID HAVING count(*) > 1);");
+
+        echo "<table border='1'>
+        <tr>
+        <th>LastName</th>
+        <th>FirstName</th>
+        </tr>";
+
+        while($row = mysqli_fetch_array($result))
+        {
+        echo "<tr>";
+        echo "<td>" . $row['LastName'] . "</td>";
+        echo "<td>" . $row['FirstName'] . "</td>";
+        echo "</tr>";
+        }   
+        echo "</table>";
     }
