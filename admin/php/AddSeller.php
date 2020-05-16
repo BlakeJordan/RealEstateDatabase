@@ -10,13 +10,15 @@ $roomNum = $_POST['roomNum'];
 $bathNum = $_POST['bathNum'];
 $mysqli = new mysqli("mysql.eecs.ku.edu", "kevdinh33", "Meej3ien", "kevdinh33");
 
+console.log(sellerLastName);
+
 if ($mysqli->connect_error){
   printf("Connection Failed: Could not connect to server. %\n", $mysqli->connect_error);
   exit();
 }
 //SQL code
 if($user != "NULL"){
-    $query = "INSERT INTO Sellers (Address, LastName, FirstName, Email, Phone, SellerID)
+    $query = "INSERT INTO Sellers (Address, LastName, FirstName, Email, Phone)
     VALUES ('$address', '$sellerLastName', '$sellerFirstName', '$sellerEmail', '$sellerPhone')";
     $query = "INSERT INTO Houses (Address, SquareFootage, RoomNums, BathNums)
     VALUES ('$address', '$SqFt', '$roomNum', '$bathNum')";
