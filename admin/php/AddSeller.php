@@ -18,12 +18,10 @@ if ($mysqli->connect_error){
 if($user != "NULL"){
     $query = "INSERT INTO Sellers (Address, LastName, FirstName, Email, Phone)
     VALUES ('$address', '$sellerLastName', '$sellerFirstName', '$sellerEmail', '$sellerPhone')";
-  }
-  
-  if($user != "NULL"){
     $query = "INSERT INTO Houses (Address, SquareFootage, RoomNums, BathNums)
     VALUES ('$address', '$SqFt', '$roomNum', '$bathNum')";
   }
+  
   //Success output
   if ($mysqli->query($query) === TRUE) {
     echo "<h1>Seller has been successfully added.</h1>";
@@ -40,6 +38,6 @@ if($user != "NULL"){
     <button type='button'>Return to Admin Home</button>
     </a>
   </div>";
-  
+
   $mysqli->close();
    ?>
