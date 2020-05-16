@@ -20,12 +20,15 @@ if ($mysqli->connect_error){
 if($user != "NULL"){
     $query1 = "INSERT INTO Sellers (Address, LastName, FirstName, Email, Phone)
     VALUES ('$address', '$sellerLastName', '$sellerFirstName', '$sellerEmail', '$sellerPhone')";
+<<<<<<< HEAD
     $query2 = "INSERT INTO Houses (Address, SquareFootage, RoomNums, BathNums, OwnerID)
     VALUES ('$address', '$SqFt', '$roomNum', '$bathNum')";
+=======
+>>>>>>> 6253c49e7dbda229a72f35bfbd5f68f157015b38
   }
 
   //Success output
-  if ($mysqli->query($query1) === TRUE && $mysqli->query($query2) === TRUE) {
+  if ($mysqli->query($query1) === TRUE) {
     echo "<h1>Seller has been successfully added.</h1>";
   }
   else if($user == "NULL"){
