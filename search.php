@@ -81,7 +81,7 @@
         $query =   'SELECT DISTINCT Loans.ULI, Buyers.FirstName, Buyers.LastName
                     FROM Buyers
                     INNER JOIN Loans ON (Loans.ULI = Buyers.FK_ULI)
-                    WHERE Sellers.LastName = ?;';
+                    WHERE Buyers.LastName = ?;';
 
         if($stmt = $mysqli->prepare($query)){
 
