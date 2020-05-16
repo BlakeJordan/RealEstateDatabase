@@ -35,10 +35,14 @@
         echo "</table>";
     }
     elseif($search2){
-        $result = mysqli_query($mysqli,"SELECT DISTINCT Houses.Address, Houses.SquareFootage
-                                        FROM Houses
-                                        INNER JOIN Sellers ON (Sellers.SellerID <> Houses.OwnerID)
-                                        WHERE Houses.SquareFootage < X;");
+        $query =   "SELECT DISTINCT Houses.Address, Houses.SquareFootage
+                    FROM Houses
+                    INNER JOIN Sellers ON (Sellers.SellerID <> Houses.OwnerID)
+                    WHERE Houses.SquareFootage < ?;";
+        $stmt = $mysqli->prepare($query);
+        $stmt->bind_param("s" $search2);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
         echo "<table border='1'>
         <tr>
