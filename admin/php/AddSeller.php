@@ -18,14 +18,14 @@ if ($mysqli->connect_error){
 }
 //SQL code
 if($user != "NULL"){
-    $query = "INSERT INTO Sellers (Address, LastName, FirstName, Email, Phone)
+    $query1 = "INSERT INTO Sellers (Address, LastName, FirstName, Email, Phone)
     VALUES ('$address', '$sellerLastName', '$sellerFirstName', '$sellerEmail', '$sellerPhone')";
-    $query = "INSERT INTO Houses (Address, SquareFootage, RoomNums, BathNums)
+    $query2 = "INSERT INTO Houses (Address, SquareFootage, RoomNums, BathNums)
     VALUES ('$address', '$SqFt', '$roomNum', '$bathNum')";
   }
 
   //Success output
-  if ($mysqli->query($query) === TRUE) {
+  if ($mysqli->query($query1) === TRUE && $mysqli->query($query2) === TRUE) {
     echo "<h1>Seller has been successfully added.</h1>";
   }
   else if($user == "NULL"){
