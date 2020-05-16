@@ -1,5 +1,5 @@
 <?php
-echo "<link rel='stylesheet' href='style.css'>";
+echo "<link rel='stylesheet' href='../html/style.css'>";
 $userid =$_POST['Username'];
 $password = $_POST['Password'];
 $mysqli = new mysqli("mysql.eecs.ku.edu", "kevdinh33", "Meej3ien", "kevdinh33");
@@ -13,7 +13,7 @@ if($user != "NULL"){
     $query = "INSERT INTO Users (userid, password)
     VALUES ('$userid', '$password')";
   }
-  
+
   //Success output
   if ($mysqli->query($query) === TRUE) {
     echo "<h1>User has been successfully added.</h1>";

@@ -1,5 +1,5 @@
 <?php
-echo "<link rel='stylesheet' href='style.css'>";
+echo "<link rel='stylesheet' href='../html/style.css'>";
 $sellerFirstName = $_POST['sellerFirstName'];
 $sellerLastName = $_POST['sellerLastName'];
 $sellerEmail = $_POST['sellerEmail'];
