@@ -302,7 +302,7 @@
             echo "</table>";
         }
     }
-    else{
+    elseif($search8){
         $result = mysqli_query($mysqli,"SELECT DISTINCT Sellers.LastName, Sellers.FirstName
                                         FROM Sellers
                                         INNER JOIN Houses ON (Sellers.SellerID = Houses.OwnerID)
@@ -324,3 +324,6 @@
         }   
         echo "</table>";
     }
+
+?>
+    <input onclick= "location.href='../index.html'" type="button" value="Home">
