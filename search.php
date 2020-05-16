@@ -55,13 +55,13 @@
             echo "<table border='1'>
             <tr>
             <th>Address</th>
-            <th>SquareFootage</th>
+            <th>LastName</th>
             </tr>";
 
             while ($row = $result->fetch_assoc()) {
                 echo "<tr>";
                 echo "<td>" . $row['Address'] . "</td>";
-                echo "<td>" . $row['SquareFootage'] . "</td>";
+                echo "<td>" . $row['LastName'] . "</td>";
                 echo "</tr>";
             }
             
