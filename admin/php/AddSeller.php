@@ -20,7 +20,7 @@ if ($mysqli->connect_error){
 if($user != "NULL"){
     $query1 = "INSERT INTO Sellers (Address, LastName, FirstName, Email, Phone)
     VALUES ('$address', '$sellerLastName', '$sellerFirstName', '$sellerEmail', '$sellerPhone')";
-    $query2 = "INSERT INTO Houses (Address, SquareFootage, RoomNums, BathNums, OwnerID)
+    $query2 = "INSERT INTO Houses (Address, SquareFootage, RoomNums, BathNums)
     VALUES ('$address', '$SqFt', '$roomNum', '$bathNum')";
   }
 
