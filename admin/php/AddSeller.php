@@ -16,12 +16,12 @@ if ($mysqli->connect_error){
 }
 //SQL code
 if($user != "NULL"){
-    $query = "INSERT INTO Sellers (Address, LastName, FirstName, Email, Phone)
+    $query = "INSERT INTO Sellers (Address, LastName, FirstName, Email, Phone, SellerID)
     VALUES ('$address', '$sellerLastName', '$sellerFirstName', '$sellerEmail', '$sellerPhone')";
     $query = "INSERT INTO Houses (Address, SquareFootage, RoomNums, BathNums)
     VALUES ('$address', '$SqFt', '$roomNum', '$bathNum')";
   }
-  
+
   //Success output
   if ($mysqli->query($query) === TRUE) {
     echo "<h1>Seller has been successfully added.</h1>";
