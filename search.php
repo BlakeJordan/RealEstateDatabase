@@ -232,7 +232,7 @@
 
         if($stmt = $mysqli->prepare($query)){
 
-            $stmt->bind_param('s',$search2);
+            $stmt->bind_param('s',$search6);
 
             $stmt->execute();
 
@@ -270,7 +270,7 @@
 
         if($stmt = $mysqli->prepare($query)){
 
-            $stmt->bind_param('s',$search3);
+            $stmt->bind_param('s',$search7);
 
             $stmt->execute();
 
