@@ -12,10 +12,10 @@ if ($mysqli->connect_error){
 }
 //SQL code
 if($user != "NULL"){
-    $query = "INSERT INTO EstateAgency (License, Name, Contracts, HouseList)
-    VALUES ('$agentNumber', '$agentName', '$agentContract', '$houseList')";
+    $query = "INSERT INTO EstateAgency (License, Name, Contracts)
+    VALUES ('$agentNumber', '$agentName', '$agentContract')";
   }
-  
+
   //Success output
   if ($mysqli->query($query) === TRUE) {
     echo "<h1>Agency has been successfully added.</h1>";
@@ -32,6 +32,6 @@ if($user != "NULL"){
     <button type='button'>Return to Admin Home</button>
     </a>
   </div>";
-  
+
   $mysqli->close();
    ?>
