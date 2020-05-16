@@ -1,5 +1,5 @@
 <?php
-echo "<link rel='stylesheet' href='style.css'>";
+echo "<link rel='stylesheet' href='../html/style.css'>";
 $agentNumber = $_POST['agentNumber'];
 $agentName = $_POST['agentName'];
 $agentContract = $_POST['agentContract'];

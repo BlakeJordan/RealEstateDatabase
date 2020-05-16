@@ -1,5 +1,5 @@
 <?php
-echo "<link rel='stylesheet' href='style.css'>";
+echo "<link rel='stylesheet' href='../html/style.css'>";
 $loanID = $_POST['loanID'];
 $bank = $_POST['bank'];
 $intRate = $_POST['intRate'];
@@ -15,7 +15,7 @@ if($user != "NULL"){
     $query = "INSERT INTO Loans (ULI, BankLoan, InterestRate, MortgageLength)
     VALUES ('$loanID', '$bank', '$intRate', '$mortLength')";
   }
-  
+
   //Success output
   if ($mysqli->query($query) === TRUE) {
     echo "<h1>Loan has been successfully added.</h1>";
@@ -32,6 +32,6 @@ if($user != "NULL"){
     <button type='button'>Return to Admin Home</button>
     </a>
   </div>";
-  
+
   $mysqli->close();
    ?>

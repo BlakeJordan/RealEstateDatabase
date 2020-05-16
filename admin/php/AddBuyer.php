@@ -1,5 +1,5 @@
 <?php
-echo "<link rel='stylesheet' href='style.css'>";
+echo "<link rel='stylesheet' href='../html/style.css'>";
 $buyerEmail = $_POST['buyerEmail'];
 $buyerLastName = $_POST['buyerLastName'];
 $buyerFirstName = $_POST['buyerFirstName'];
@@ -15,7 +15,7 @@ if($user != "NULL"){
     $query = "INSERT INTO Buyers (Email, LastName, FirstName, Phone)
     VALUES ('$buyerEmail', '$buyerLastName', '$buyerFirstName', '$buyerPhone')";
   }
-  
+
   //Success output
   if ($mysqli->query($query) === TRUE) {
     echo "<h1>Buyer has been successfully added.</h1>";
@@ -32,6 +32,6 @@ if($user != "NULL"){
     <button type='button'>Return to Admin Home</button>
     </a>
   </div>";
-  
+
   $mysqli->close();
    ?>
