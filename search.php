@@ -34,30 +34,45 @@
         }   
         echo "</table>";
     }
+    //Get the list of houses by searching a sellers last name
     elseif($search2){
-        $query =   "SELECT DISTINCT Houses.Address, Houses.SquareFootage
-                    FROM Houses
-                    INNER JOIN Sellers ON (Sellers.SellerID <> Houses.OwnerID)
-                    WHERE Houses.SquareFootage < ?;";
-        $stmt = $mysqli->prepare($query);
-        $stmt->bind_param("s" $search2);
-        $stmt->execute();
-        $result = $stmt->get_result();
+        
+        $query = 'SELECT DISTINCT Houses.Address, Sellers.LastName
+                                        FROM Houses
+                                        INNER JOIN Sellers ON (Sellers.SellerID = Houses.OwnerID)
+                                        WHERE Sellers.LastName = ?;';
 
-        echo "<table border='1'>
-        <tr>
-        <th>Address</th>
-        <th>SquareFootage</th>
-        </tr>";
+        if($stmt = $mysqli->prepare($query)){
 
-        while($row = mysqli_fetch_array($result))
-        {
-        echo "<tr>";
-        echo "<td>" . $row['Address'] . "</td>";
-        echo "<td>" . $row['SquareFootage'] . "</td>";
-        echo "</tr>";
-        }   
-        echo "</table>";
+            $stmt->bind_param('s',$search2);
+
+            $stmt->execute();
+
+            $result = $stmt->get_result();
+
+            $num_of_rows = $result->num_rows;
+
+            echo "<table border='1'>
+            <tr>
+            <th>Address</th>
+            <th>SquareFootage</th>
+            </tr>";
+
+            while ($row = $result->fetch_assoc()) {
+                echo "<tr>";
+                echo "<td>" . $row['Address'] . "</td>";
+                echo "<td>" . $row['SquareFootage'] . "</td>";
+                echo "</tr>";
+            }
+            
+            /* free results */
+            $stmt->free_result();
+            
+            /* close statement */
+            $stmt->close();
+
+            echo "</table>";
+        }
     }
 
     else {
