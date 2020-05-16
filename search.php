@@ -2,7 +2,7 @@
     $mysqli = new mysqli("mysql.eecs.ku.edu", "kevdinh33", "Meej3ien", "kevdinh33");
 
     $search1 = isset($_POST['multi-owner']) ? $_POST['multi-owner'] : false;
-    $search2 = isset($_POST['house-smaller']) ? $_POST['house-smaller'] : false;
+    $search2 = isset($_POST['whose-house']) ? $_POST['whose-house'] : false;
     //$search3 = isset($_POST['house-price']) ? $_POST['house-price'] : false;
     $option = isset($_POST['tableOptions']) ? $_POST['tableOptions'] : false;
 
