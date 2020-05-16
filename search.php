@@ -326,4 +326,4 @@
     }
 
 ?>
-    <button onclick= "location.href='../index.html'" type="button" value="Home"></button>
+    <button onclick= "location.href='index.html'" type="button" value="Home">Return to Previous Page</button>
