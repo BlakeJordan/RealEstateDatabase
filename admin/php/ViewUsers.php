@@ -29,7 +29,7 @@ echo "</table>";
 
 echo "<br><br>
 <div class='menu'>
-  <a href='AdminHome.html'>
+  <a href='../html/AdminHome.html'>
   <button type='button'>Return</button>
   </a>
 </div>";
