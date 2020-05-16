@@ -9,7 +9,7 @@
     $search5 = isset($_POST['search-loans']) ? $_POST['search-loans'] : false;
     $search6 = isset($_POST['whose-house']) ? $_POST['whose-house'] : false;
     $search7 = isset($_POST['what-loan']) ? $_POST['what-loan'] : false;
-    $search8 = isset($_POST['multi-owner']) ? $_POST['multi-owner'] : false;
+    $search8 = isset($_POST['what-owner']) ? $_POST['what-owner'] : false;
 
     if ($mysqli->connect_errno)
     {
@@ -326,4 +326,4 @@
     }
 
 ?>
-    <input onclick= "location.href='../index.html'" type="button" value="Home">
+    <button onclick= "location.href='../index.html'" type="button" value="Home"></button>
